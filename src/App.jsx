@@ -39,7 +39,7 @@ setBookmarked(remainingBookMark);
  <h1>bookmakred count: {bookmakred.length}</h1>
 
  {
-  bookmakred.map((marked)=><p className='bg-red-500 p-2 shadow m-2 text-white'>{marked.title}</p>)
+  bookmakred.map((marked)=><p key={marked.id} className='bg-red-500 p-2 shadow m-2 text-white'>{marked.title}</p>)
  }
   </div>
 </div>
