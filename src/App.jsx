@@ -11,12 +11,17 @@ const handleBookMark = (blog) =>{
 setBookmarked([...bookmakred,blog])
 }
 
-const handlemarkAsRead =(time) =>{
+const handlemarkAsRead =(time, id) =>{
 const newTime = readingCount + time;
   setReadingCount(newTime);
+ handleRemoveFromBookmark(id)
 }
 
-console.log(readingCount)
+const handleRemoveFromBookmark = (id) => {
+const remainingBookMark = bookmakred.filter((mark)=> mark.id !== id);
+setBookmarked(remainingBookMark);
+}
+
 
   return (
     <>
@@ -34,7 +39,7 @@ console.log(readingCount)
  <h1>bookmakred count: {bookmakred.length}</h1>
 
  {
-  bookmakred.map((marked)=><p>{marked.title}</p>)
+  bookmakred.map((marked)=><p className='bg-red-500 p-2 shadow m-2 text-white'>{marked.title}</p>)
  }
   </div>
 </div>

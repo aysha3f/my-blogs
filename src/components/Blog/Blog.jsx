@@ -28,7 +28,7 @@ const Blog = ({blog, handleBookMark, handlemarkAsRead}) => {
     }
   </div>
     <div className="card-actions justify-end">
-      <button onClick={()=>handlemarkAsRead(blog.reading_time)} className="btn btn-primary">mark as read</button>
+      <button onClick={()=>handlemarkAsRead(blog.reading_time, blog.id)} className="btn btn-primary">mark as read</button>
     </div>
   </div>
 </div>
